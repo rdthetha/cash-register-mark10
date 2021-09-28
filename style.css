@@ -1,5 +1,5 @@
 body{
-    background-color: antiquewhite;
+    background-color: whitesmoke;
 }
 
 table, td, th {
@@ -20,6 +20,7 @@ table, td, th {
     width: 50vw;
     align-items: center;
     margin: auto;
+    background-color: #BFDBFE;
 }
 .description{
     text-align: center;
