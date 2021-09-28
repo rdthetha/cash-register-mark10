@@ -1,6 +1,45 @@
+body{
+    background-color: antiquewhite;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 1rem 1rem;
+    
+  }
+
+.change-table {
+    padding: 2rem;
+    border-collapse: collapse;
+    margin-left: auto;
+  margin-right: auto;
+  }
 .container{
     display: flex;
     flex-direction: column;
     width: 50vw;
+    align-items: center;
+    margin: auto;
+}
+.description{
+    text-align: center;
+}
+.heading{
+    text-align: center;
 }
 
+#first-button{
+    margin: 1rem;
+}
+
+#check-button{
+    margin: 1rem;
+}
+
+#cash-given{
+    margin: 1rem;
+}
+
+#bill-amount{
+    margin:1rem;
+}
