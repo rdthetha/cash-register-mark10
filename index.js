@@ -1,23 +1,30 @@
 const billAmt = document.querySelector("#bill-amount");
 const cashGiven = document.querySelector("#cash-given");
 const checkButton = document.querySelector("#check-button");
-const message = document.querySelector("#error-message");
-const firstmessage=document.querySelector("#first-error");
+const message = document.querySelector(".error-message");
+const changeReturn=document.querySelector(".output");
+const cashGivendiv=document.querySelector(".cash-given-input");
 const noteValue = document.querySelectorAll(".note-value");
-const checkFirstButton=document.querySelector("#first-button");
+const nextButton=document.querySelector("#next-button");
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-checkFirstButton.addEventListener("click",function firstValidity(){
+nextButton.addEventListener("click",function firstValidity(){
 hideMessage();
-if (billAmt.value > 0) {}
+if (billAmt.value > 0) {
+    nextButton.style.display="none";
+    cashGivendiv.style.display="block";
+}
 else{
-    firstshowMessage("Bill amount cannot be negative");
+    showMessage("Enter Valid Bill Amount");
 }
 })
-checkButton.addEventListener("click", function validateAmount() {
+checkButton.addEventListener("click", function secondValidity() {
     hideMessage();
+    let a=Number(billAmt.value);
+    let b=Number(cashGiven.value);
 
-    if (billAmt.value > 0) {
+    if (a>0 && b>0) 
+    {
         if (cashGiven.value >= billAmt.value) {
             const change = cashGiven.value - billAmt.value;
             calculateChange(change);
@@ -25,29 +32,24 @@ checkButton.addEventListener("click", function validateAmount() {
             showMessage("Cash Given should be more than or equal to bill amount");
         }
 
-    } else {
-        showMessage("Bill amount cannot be negative");
-    }
+    } 
+    
 
 });
 
 
 function hideMessage() {
     message.style.display = "none";
-    firstmessage.style.display="none";
 }
 
 function showMessage(m) {
 
     message.style.display = "block";
     message.innerText = m;
-}
-function firstshowMessage(m) {
-
-    firstmessage.style.display = "block";
-    firstmessage.innerText = m;
+    changeReturn.style.display="none"
 }
 function calculateChange(change) {
+    changeReturn.style.display="block";
     for (let i = 0; i < availableNotes.length; i++) {
         const noOfNotes = Math.trunc(change / availableNotes[i]);
         change = change % availableNotes[i];

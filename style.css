@@ -1,18 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+:root{
+    --primary-color:#F87171;
+    --background-color:#FEE2E2;
+}
 body{
-    background-color: whitesmoke;
+    background-color: var(--background-color);
+    font-family: 'Playfair Display', serif;
+    margin: 0px;
 }
 
-table, td, th {
-    border: 1px solid black;
-    padding: 1rem 1rem;
-    
-  }
+.label{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+}
 
-.change-table {
-    padding: 2rem;
+input{
+    display: block;
+    width: 60%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+button{
+    display: block;
+    background-color:var(--background-color);
+    margin: auto;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 0cm;
+
+}
+
+.cash-given-input{
+    display: none;
+}
+
+.output{
+    display: none;
+}
+.output table,th,td{
+    border: 2px solid var(--background-color);
     border-collapse: collapse;
+    padding: 1rem;
     margin-left: auto;
-  margin-right: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    font-weight: bolder;
   }
 .container{
     display: flex;
@@ -20,27 +60,14 @@ table, td, th {
     width: 50vw;
     align-items: center;
     margin: auto;
-    background-color: #BFDBFE;
+    background-color: var(--primary-color);;
 }
 .description{
     text-align: center;
-}
-.heading{
-    text-align: center;
+    font-weight: bold;
 }
 
-#first-button{
-    margin: 1rem;
-}
-
-#check-button{
-    margin: 1rem;
-}
-
-#cash-given{
-    margin: 1rem;
-}
-
-#bill-amount{
-    margin:1rem;
+.error-message{
+    font-weight: bold;
+    font-size: 1.5rem;
 }
