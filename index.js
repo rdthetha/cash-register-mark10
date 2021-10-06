@@ -25,17 +25,18 @@ checkButton.addEventListener("click", function secondValidity() {
 
     if (a>0 && b>0) 
     {
-        if (cashGiven.value >= billAmt.value) {
-            const change = cashGiven.value - billAmt.value;
-            calculateChange(change);
-        } else {
-            showMessage("Cash Given should be more than or equal to bill amount");
+        
+        if(a > b){
+            showMessage("Cash Given is less than bill amount ");
+            return;
         }
-
+        calculateChange(a, b);
     } 
-    
+    else{
+        showMessage("Enter valid Bill amount and Cash given");
+        }
+})
 
-});
 
 
 function hideMessage() {
